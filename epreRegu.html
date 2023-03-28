@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressao Regular</title>
+    <style>
+        .errado
+        {
+            background-color: red;
+        }
+        .certo
+        {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    Digite um CPF: <input class="" type="text" id="cpf" onkeyup="Validar();">
+    <button > OK </button>
+    <br><br>
+    Digite um Telefone: <input type="text" id="Telefone" onkeyup="Validartelefone();">
+    <button > OK </button>
+    <br><br>
+    Digite um CEP: <input type="text" id="CEP" onkeyup="Validarcep();">
+    <button > OK </button>
+<body>
+    <script>
+        function Validar()
+        {
+            expressao = /^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/g;
+            texto = cpf.value
+            resposta = expressao.test(texto)
+            if(resposta==false)
+            {
+                cpf.classList.remove('certo');
+                cpf.classList.add('errado');
+
+            }
+            if(resposta==true)
+            {
+                cpf.classList.remove('errado');
+                cpf.classList.add('certo');
+            }
+        }
+        function Validartelefone()
+        {
+            expressao = /^\([0-9]{2}\)\-[0-9]\-[0-9]{4}-[0-9]{4}$/
+            texto = Telefone.value
+            resposta = expressao.test(texto)
+            if(resposta==false)
+            {
+                Telefone.classList.remove('certo');
+                Telefone.classList.add('errado');
+            }
+            else
+            {
+                Telefone.classList.remove('errado');
+                Telefone.classList.add('certo');
+            }
+        }
+        function Validarcep()
+        {
+            expressao = /^[0-9]{5}-[0-9]{3}$/
+            texto = CEP.value
+            resposta = expressao.test(texto)
+            if(resposta==false)
+            {
+                CEP.classList.remove('certo');
+                CEP.classList.add('errado');
+            }
+            else
+            {
+                CEP.classList.remove('errado');
+                CEP.classList.add('certo');
+            }
+        }
+    </script>
+</body>
+    
+</body>
+</html>
